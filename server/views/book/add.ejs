@@ -1,0 +1,67 @@
+<%-include ('../partials/header.ejs');%>
+<%-include ('../partials/main_nav.ejs');%>
+
+<!--content for the Add page-->
+
+<div class = "container">
+    <div class = "row">
+    <div class="offset-md-3 col-md-6">
+        <style>
+            Body{
+          background-image: linear-gradient(#2133b0,#ffc3a0);}
+        </style> 
+        <h1>Contacts</h1>
+        <form class = "form" method="POST">
+                <div class ="form group">
+                    <label for="NameTextField">Name</label>
+                    <input type="text" class="form control"
+                    id="NameTextField"
+                    placeholder="Enter the Name"
+                    name="Name" required>
+                </div>
+
+                <div class ="form group">
+                    <label for="NumberTextField">Number</label>
+                    <input type="text" class="form control"
+                    id="NumberTextField"
+                    placeholder="Enter the Number"
+                    name="Number" required>
+                </div>
+
+                <div class ="form group">
+                    <label for="EmailTextField">Email</label>
+                    <input type="text" class="form control"
+                    id="EmailTextField"
+                    placeholder="Enter the Email"
+                    name="Email" required>
+                </div>
+
+                
+                <button class = "btn btn-primary" type="submit"><i class = "fas fa-edit"></i>submit</button>
+                <a href="/bookList" class="btn btn-warning"><i class="fas fa-undo"></i>cancel</a> 
+            
+        </form>
+        </div>
+        </div>
+        <button class="open-button" onclick="openForm()">For any Concern Email US Now!</button>
+        <div class="chat-popup" id="myForm">
+            <form action="mailto:patelamir32003@gmail.com" class="form-container">
+                <label for="msg"><b>Email us now!</b></label>
+                <textarea class="chat" placeholder="Type message.." name="msg" required></textarea>
+    
+                <button type="submit" class="btn">Send</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+            <script>
+                function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                }
+    
+                function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                }
+            </script>
+    
+        </div>    
+    </div>
+

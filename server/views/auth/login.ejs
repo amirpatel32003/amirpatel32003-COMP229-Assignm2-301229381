@@ -1,0 +1,67 @@
+<%-include ('../partials/header.ejs');%>
+<%-include ('../partials/main_nav.ejs');%>
+  
+<main class="container">
+    <!--message Area-->
+    <% if (messages.length>0){%>
+
+        <div class="alert alert-danger">
+            <%=messages%>
+            </div>
+            <%}%>
+            <div class="row">
+                <div class="offset md-4 col-md-4">
+                    <h1>Please login</h1>
+                    <form method="POST" autocomplete="off">
+                        <fieldset class="form-group">
+                            <label for="username">username:</label>
+                            <input type="text" class="form-control"
+                            name= "username" placeholder = "Enter username"
+                            id ="username" required autofocus>
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control"
+                                name="password"
+                                placeholder = "Enter password"
+                                id ="password" required>
+                                or
+                                <a href="/register">Register Now</a>
+                               
+                                </fieldset>
+                                
+                                <fieldset class="form-group text-right">
+                                    <input type="submit" class="btn btn-success" value="Login">
+                                    <a href="/">
+                                   <input type="button" class="btn btn-warning" value="cancel">
+                                    </a>
+                                   
+                                    </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <button class="open-button" onclick="openForm()">For any Concern Email US Now!</button>
+        <div class="chat-popup" id="myForm">
+            <form action="mailto:patelamir32003@gmail.com" class="form-container">
+                <label for="msg"><b>Email us now!</b></label>
+                <textarea class="chat" placeholder="Type message.." name="msg" required></textarea>
+    
+                <button type="submit" class="btn">Send</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+            <script>
+                function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                }
+    
+                function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                }
+            </script>
+    
+        </div>      
+    </main>
+
+  
+ 
